@@ -5,15 +5,15 @@
 <body>
     
   <script>
-      var a={'x':10,'y':20,'z':30};
-      var c=new Object();
-      var d={};
-      a.a='abc';
-      delete a.x;
-      for (key in a) {
-          document.write(key +'='+a[key]+'<br>');
+      function myFun(arg1, arg2){
+          alert("arg #=" + arguments.length);
+          return arg1+arg2;
       }
-      alert(this.a.z);
+      if(this==window) alert("this ===window");
+      
+      var a=myFun('abc','xyz');
+      alert("fun #="+myFun.length);
+
   </script>
 </body>
 </html>
