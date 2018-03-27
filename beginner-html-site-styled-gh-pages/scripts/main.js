@@ -1,26 +1,24 @@
-var myHeading = document.querySelector('h1');
-myHeading.innerHTML = 'Cloude Service<br>2018-1';
-function getIdPw(){
-    var id = prompt('ID 입력',''); //prompt는 입력창
-    alert(id+'가 로그인함.');
-    var passwordSystem='12345';
-    var password = prompt('pw 입력','');
-    if(password === passwordSystem){
-        alert('정상 로그인!');
-    }
-    else
-    alert('비밀번호 오류');
-}
-document.querySelector('html').onclick= function(){//전체 html을 가져오는 객체/추적
-getIdPw();
-}
-var myImage = document.querySelector('img');
+function getIdPw(){ 
+    var id = prompt('ID:입력',''); 
+    var ps = prompt(id + '가 사용할 초기 비밀번호 입력',''); 
 
-myImage.onclick = function() {
-    var mySrc = myImage.getAttribute('src');
-    if(mySrc === 'images/firefox-icon.png') {
-      myImage.setAttribute ('src','mokwon.png');
-    } else {
-      myImage.setAttribute ('src','firefox-icon.png');
-    }
-}
+    
+    var password = localStorage.getItem('password'); 
+    if(ps === '123'){
+        localStorage.setItem('id',id); 
+        var id = localStorage.getItem('id'); 
+        var myHeading = document.querySelector('h1'); 
+        myHeading.innerHTML = id + '<br>Homepage'; 
+    
+    
+    } 
+ else{ 
+       alert('비밀번호가 잘못 입력되었습니다.'); 
+       getIdPw(); 
+       } 
+    } 
+    var myButton = document.querySelector('button'); 
+   myButton.onclick = function (){ 
+       getIdPw(); 
+   } 
+   
