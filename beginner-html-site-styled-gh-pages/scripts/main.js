@@ -8,3 +8,10 @@ var b = a*text;
 var iceCream = 'chocolate';
 var id = prompt('ID 입력',''); //prompt는 입력창
 alert(id+'가 로그인함.');
+var passwordSystem='12345';
+var password = prompt('pw 입력','');
+if(password === passwordSystem){
+    alert('정상 로그인!');
+}
+else
+alert('비밀번호 오류');
