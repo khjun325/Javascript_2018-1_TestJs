@@ -3,17 +3,30 @@
   <meta charset="utf-8"/>
 </head>
 <body>
-    
+    this is a test.
   <script>
-      function myFun(arg1, arg2){
-          alert("arg #=" + arguments.length);
-          return arg1+arg2;
-      }
-      if(this==window) alert("this ===window");
-      
-      var a=myFun('abc','xyz');
-      alert("fun #="+myFun.length);
+    function Human() {}
+    Human.prototype.name='정통';
+    Human.prototype.gender='남자/여자';
+    function Korean() {
 
+    }
+    Korean.prototype = new Human();
+    Korean.__proto__=Human.prototype;
+    Korean.prototype.name='정통2';
+    
+    function Daejeon() {}
+    Daejeon.prototype=new Korean();
+    Daejeon.__proto__=Korean.prototype;
+
+    let human=new Human();
+    let korean = new Korean();
+    let daejeon = new Daejeon();
+
+    console.log(human.name);
+    console.log(Korean.name);
+    console.log(daejeon.name);
+    
   </script>
 </body>
 </html>
